@@ -1,5 +1,5 @@
-resource "azurerm_container_connected_registry" "container_connected_registrys" {
-  for_each = var.container_connected_registrys
+resource "azurerm_container_connected_registry" "container_connected_registries" {
+  for_each = var.container_connected_registries
 
   container_registry_id = each.value.container_registry_id
   name                  = each.value.name

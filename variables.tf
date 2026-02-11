@@ -1,6 +1,6 @@
-variable "container_connected_registrys" {
+variable "container_connected_registries" {
   description = <<EOT
-Map of container_connected_registrys, attributes below
+Map of container_connected_registries, attributes below
 Required:
     - container_registry_id
     - name
@@ -25,13 +25,13 @@ EOT
     container_registry_id = string
     name                  = string
     sync_token_id         = string
-    audit_log_enabled     = optional(bool, false)
+    audit_log_enabled     = optional(bool) # Default: false
     client_token_ids      = optional(list(string))
-    log_level             = optional(string, "None")
-    mode                  = optional(string, "ReadWrite")
+    log_level             = optional(string) # Default: "None"
+    mode                  = optional(string) # Default: "ReadWrite"
     parent_registry_id    = optional(string)
-    sync_message_ttl      = optional(string, "P1D")
-    sync_schedule         = optional(string, "* * * * *")
+    sync_message_ttl      = optional(string) # Default: "P1D"
+    sync_schedule         = optional(string) # Default: "* * * * *"
     sync_window           = optional(string)
     notification = optional(object({
       action = string
