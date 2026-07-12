@@ -33,12 +33,12 @@ EOT
     sync_message_ttl      = optional(string) # Default: "P1D"
     sync_schedule         = optional(string) # Default: "* * * * *"
     sync_window           = optional(string)
-    notification = optional(object({
+    notification = optional(list(object({
       action = string
       digest = optional(string)
       name   = string
       tag    = optional(string)
-    }))
+    })))
   }))
 }
 

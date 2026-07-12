@@ -14,7 +14,7 @@ resource "azurerm_container_connected_registry" "container_connected_registries"
   sync_window           = each.value.sync_window
 
   dynamic "notification" {
-    for_each = each.value.notification != null ? [each.value.notification] : []
+    for_each = each.value.notification != null ? each.value.notification : []
     content {
       action = notification.value.action
       digest = notification.value.digest
