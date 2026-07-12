@@ -1,3 +1,7 @@
+output "container_connected_registries_id" {
+  description = "Map of id values across all container_connected_registries, keyed the same as var.container_connected_registries"
+  value       = { for k, v in azurerm_container_connected_registry.container_connected_registries : k => v.id }
+}
 output "container_connected_registries_audit_log_enabled" {
   description = "Map of audit_log_enabled values across all container_connected_registries, keyed the same as var.container_connected_registries"
   value       = { for k, v in azurerm_container_connected_registry.container_connected_registries : k => v.audit_log_enabled }
